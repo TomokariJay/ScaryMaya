@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Window with Picture</title>
+    <style>
+        body {
+            text-align: center;
+            padding: 20px;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            margin-top: 20px; /* Adjusted margin to provide space between text and image */
+        }
+    </style>
+    <script>
+        function openPopup() {
+            var imageUrl = "your-image-url.jpg";
+            var popupWindow = window.open('', 'Popup Window', 'width=120,height=120'); // Adjusted window dimensions
+            popupWindow.document.write('<html><head><title>Popup Window</title></head><body><img src="' + imageUrl + '" alt="Image" width="200" height="250"></body></html>');
+            popupWindow.document.close();
+        }
+    </script>
+</head>
+<body>
+    <h1>Click the button to open the popup window</h1>
+    <p>This is some sample text on the page.</p>
+    <button onclick="openPopup()">Open Popup</button>
+    <img src="your-image-url.jpg" alt="Image" width="200" height="250">
+</body>
+</html>
