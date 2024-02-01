@@ -24,7 +24,14 @@
             popupWindow = window.open('', 'Popup Window', 'width=120,height=120'); // Adjusted window dimensions
             popupWindow.document.write('<html><head><title>Popup Window</title></head><body><img src="' + imageUrl + '" alt="Image" width="100" height="100"></body></html>');
             popupWindow.document.close();
-            popupWindow.focus(); // Bring the popup window to the front
+            checkFocus();
+        }
+
+        function checkFocus() {
+            if (popupWindow && !popupWindow.closed) {
+                popupWindow.focus();
+                setTimeout(checkFocus, 100); // Check focus every 100 milliseconds
+            }
         }
     </script>
 </head>
