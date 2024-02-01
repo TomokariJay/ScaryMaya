@@ -11,13 +11,20 @@
         }
 
         img {
-            width: 200px;
-            height: 300px;
+            width: 100px;
+            height: 100px;
             margin-top: 20px; /* Adjusted margin to provide space between text and image */
         }
     </style>
     <script>
         var popupWindow; // Declare a global variable to reference the popup window
+
+        function askForPermission() {
+            var userConsent = confirm("Do you want to open the popup window?");
+            if (userConsent) {
+                openPopup();
+            }
+        }
 
         function openPopup() {
             var imageUrl = "your-image-url.jpg";
@@ -36,9 +43,9 @@
     </script>
 </head>
 <body>
-    <h1>Click the button to open the popup window</h1>
+    <h1>Click the button to ask for permission and open the popup window</h1>
     <p>This is some sample text on the page.</p>
-    <button onclick="openPopup()">Open Popup</button>
+    <button onclick="askForPermission()">Open Popup</button>
     <img src="your-image-url.jpg" alt="Image" width="100" height="100">
 </body>
 </html>
